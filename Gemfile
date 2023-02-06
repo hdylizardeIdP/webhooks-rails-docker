@@ -44,6 +44,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Execute jobs in the background [https://github.com/mperham/sidekiq]
 gem "sidekiq", "~> 7.0"
+gem "dotenv-rails"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -52,6 +53,10 @@ group :development, :test do
   # Reduces boot times through caching; required in config/boot.rb
   gem "bootsnap", require: false
   gem "rspec-rails", "~> 6.0.1"
+  gem "koala"
+  gem "googleauth", "~> 0.17"
+  gem "google-api-client", "~> 0.50"
+
 end
 
 group :development do
