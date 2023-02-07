@@ -8,4 +8,6 @@ class BlogController < ApplicationController
         @test = params[:test]
     end
 
+    # Compare this snippet from app/controllers/blog_controller.rb:
+
   end

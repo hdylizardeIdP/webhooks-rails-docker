@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 RSpec.shared_examples 'A Ruby object with 4 elements' do 
     it 'returns the number of items' do 
         expect(subject.size).to eq(4)
