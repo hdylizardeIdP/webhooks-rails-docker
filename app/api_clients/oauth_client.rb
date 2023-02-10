@@ -23,7 +23,15 @@ class OauthClient
 
     end
 
-# memoized method 
+# get the user's email address from the OAuth provider
+    def get_user_email(access_token)
+        uri = URI.parse("https://www.googleapis.com/oauth2/v2/userinfo")
+        http = Net::HTTP.new(uri.host, uri.port)
+        http.use_ssl = true
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        request = Net::HTTP::Get.new(uri.request_uri)
+        request
+    end
 
 
 end
