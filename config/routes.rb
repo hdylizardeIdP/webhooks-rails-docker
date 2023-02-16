@@ -6,6 +6,18 @@ Rails.application.routes.draw do
   get "/blog", to: "blog#index", as: :blog
   get "/blog/:id", to: "blog#show", as: :blog_post
 
+  resources :books, path: "products" do
+    member do
+      patch :publish
+      patch :unpublish
+    end
+
+    collection do
+      patch :publish_all
+      post  :import
+    end
+  end
+
   # Sidekiq has a web dashboard which you can enable below. It's turned off by
   # default because you very likely wouldn't want this to be available to
   # everyone in production.
